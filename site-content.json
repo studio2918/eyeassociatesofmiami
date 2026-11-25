@@ -1,0 +1,204 @@
+{
+  "_help": "Built-in copy of the admin portal feed. The site reads feedUrl (2-second timeout) and falls back to \"fallback\". Staff edit the admin portal, not this file; scripts/snapshot-content.py refreshes \"fallback\" from the feed before each publish.",
+  "_apiHelp": "The admin portal API (stack eaom-site-admin). The job application form sends to <apiUrl>/apply. Blank = no online applications (people are told how to apply in person).",
+  "apiUrl": "https://pj6vomnlq7.execute-api.us-east-1.amazonaws.com",
+  "_feedHelp": "The admin portal's public feed address, ending in /site. Blank = always use the fallback below.",
+  "feedUrl": "https://pj6vomnlq7.execute-api.us-east-1.amazonaws.com/site",
+  "marloLink": "https://store.meetmarlo.com/login",
+  "_googleReviewHelp": "Paste the link from Google Business Profile > 'Ask for reviews'. Until then the footer link opens a Google search for the office.",
+  "googleReviewLink": "https://g.page/r/CcrgvsHVKgG4EAI/review",
+  "_analyticsHelp": "Optional: Cloudflare Web Analytics token (privacy-safe, no cookies). Leave blank for no visitor counting.",
+  "cloudflareAnalyticsToken": "",
+  "howToApply": "Prefer to apply in person? Stop by the front desk with a résumé or call (918) 540-1929.",
+  "_afterHoursHelp": "After-hours urgent check: Studio 2918 AWS system (signed AWS BAA). Filled in after deploy. Blank = urgent patients are told to go to the ER or call when we open.",
+  "afterHours": {
+    "apiUrl": "https://4meepsd5b2.execute-api.us-east-1.amazonaws.com",
+    "authDomain": "https://eaom-doctors-875953.auth.us-east-1.amazoncognito.com",
+    "clientId": "5h3ovbdns5l8nthhcfh1dkok7r"
+  },
+  "fallback": {
+    "hours": {
+      "mon": {
+        "open": "08:30",
+        "close": "17:00"
+      },
+      "tue": {
+        "open": "08:30",
+        "close": "17:00"
+      },
+      "wed": {
+        "open": "08:30",
+        "close": "17:00"
+      },
+      "thu": {
+        "open": "08:30",
+        "close": "17:00"
+      },
+      "fri": {
+        "open": "08:30",
+        "close": "16:00"
+      },
+      "sat": null,
+      "sun": null
+    },
+    "hoursLine": "Open Mon–Thu 8:30–5 · Fri 8:30–4",
+    "banner": null,
+    "closings": [
+      {
+        "date": "2026-11-25",
+        "allDay": false,
+        "openAt": null,
+        "closeAt": "12:00",
+        "reason": "Thanksgiving"
+      },
+      {
+        "date": "2026-11-26",
+        "allDay": true,
+        "openAt": null,
+        "closeAt": null,
+        "reason": "Thanksgiving"
+      },
+      {
+        "date": "2026-11-27",
+        "allDay": true,
+        "openAt": null,
+        "closeAt": null,
+        "reason": "Thanksgiving"
+      }
+    ],
+    "jobs": [],
+    "insurance": {
+      "intro": "Plans change, so call us with your insurance card or plan information handy. **Not every plan has a card.** We do our best to verify your coverage before your visit.",
+      "groups": [
+        {
+          "name": "Regular Medicare",
+          "plans": [
+            "Medicare",
+            "Railroad Medicare",
+            "Most Medicare supplement plans"
+          ]
+        },
+        {
+          "name": "Medicare Advantage — Oklahoma Plans",
+          "plans": [
+            "AARP / UnitedHealthcare",
+            "Aetna",
+            "Anthem",
+            "Blue Cross Medicare Advantage",
+            "Devoted Health",
+            "Humana",
+            "UnitedHealthcare Dual Complete",
+            "Wellcare"
+          ],
+          "note": "Medicare Advantage plans take the place of Regular Medicare. They are state-specific, so we can only accept Oklahoma plans."
+        },
+        {
+          "name": "Oklahoma Medicaid",
+          "plans": [
+            "SoonerCare",
+            "Aetna Better Health",
+            "Humana Healthy Horizons",
+            "Oklahoma Complete Health"
+          ],
+          "note": "Glasses coverage depends on your age and your Medicaid plan. Some plans cover glasses and some don't. We do our best to verify yours before your visit. We can't file Medicaid from other states."
+        },
+        {
+          "name": "Commercial Insurance",
+          "plans": [
+            "Aetna",
+            "Blue Cross Blue Shield of Oklahoma",
+            "Cigna",
+            "GEHA",
+            "HealthChoice",
+            "Humana",
+            "Medica",
+            "Meritain Health",
+            "Point C",
+            "UMR (medical)",
+            "UnitedHealthcare"
+          ],
+          "note": "Don't see your plan? Call us to verify."
+        },
+        {
+          "name": "Military & VA",
+          "plans": [
+            "CHAMPVA",
+            "Tricare"
+          ]
+        },
+        {
+          "name": "Tribal Health",
+          "plans": [
+            "Bearskin",
+            "Eastern Shawnee",
+            "Northeastern Tribal Health System",
+            "Quapaw Tribal Members",
+            "Seneca-Cayuga"
+          ],
+          "note": "Northeastern Tribal Health System requires a referral."
+        },
+        {
+          "name": "Vision Plans",
+          "plans": [
+            "VSP",
+            "EyeMed",
+            "Manhattan Life",
+            "Primary Vision Care Services",
+            "Principal Life",
+            "UMR (vision) — NRECA only"
+          ]
+        }
+      ],
+      "boxes": [
+        {
+          "title": "Vision plan or medical insurance?",
+          "style": "note",
+          "text": "Your eyes can be covered two different ways:\n- **Vision plan** (like VSP or EyeMed): routine eye exams, glasses and contacts.\n- **Medical insurance:** medical eye exams (like diabetic eye exams), treatment and monitoring of eye disease, and urgent problems like infections, injuries and sudden vision changes.\n**Sometimes we accept your medical insurance but not the vision benefits on the same plan.** Check the plans we accept, and if you're not sure, give us a call."
+        },
+        {
+          "title": "Why we ask for your medical insurance",
+          "style": "why",
+          "text": "Even if you're here for a routine exam, we ask for your medical card too. Urgent eye visits and medical testing for eye disease (like glaucoma, diabetic eye exams and macular degeneration) are usually billed to your medical insurance. Some vision plans can help with these too, and we'll check what yours covers."
+        }
+      ]
+    },
+    "doctors": [
+      {
+        "id": "mcquigg",
+        "name": "Clark McQuigg",
+        "credentials": "O.D.",
+        "title": "Optometrist",
+        "bio": ""
+      },
+      {
+        "id": "walls",
+        "name": "Wade Walls",
+        "credentials": "O.D.",
+        "title": "Optometrist",
+        "bio": ""
+      },
+      {
+        "id": "gray",
+        "name": "John Gray III",
+        "credentials": "O.D.",
+        "title": "Optometrist",
+        "bio": ""
+      }
+    ],
+    "themes": [
+      {
+        "id": "thanksgiving",
+        "on": true,
+        "start": "11-01",
+        "end": "11-30"
+      },
+      {
+        "id": "christmas",
+        "on": true,
+        "start": "12-01",
+        "end": "12-31"
+      }
+    ],
+    "updatedAt": "2026-11-25T05:22:00.028094Z"
+  }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://pj6vomnlq7.execute-api.us-east-1.amazonaws.com https://eaom-admin-875953.auth.us-east-1.amazoncognito.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src 'self'; base-uri 'none'; form-action 'self' https://eaom-admin-875953.auth.us-east-1.amazoncognito.com">
+<title>EAOM Admin</title>
+<meta name="theme-color" content="#7a2a3c">
+<meta name="color-scheme" content="light">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="EAOM Admin">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="icon" href="../img/favicon-32.png" sizes="32x32">
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <div class="brand">
+      <a class="brand-logo" href="/" aria-label="Open the patient website"><img src="../img/logo-header-clear.png" alt="" width="120" height="47"></a>
+      <span>Admin</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="menu-wrap" id="menuWrap" hidden>
+      <button type="button" class="btn ghost" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu">Menu</button>
+      <div class="menu" id="menu" hidden>
+        <div class="who" id="who"></div>
+        <a href="#profile" data-tab="profile" hidden>My profile</a>
+        <a href="#doctors" data-tab="doctors" hidden>Doctors</a>
+        <a href="#themes" data-tab="themes" class="phone-only" hidden>Holiday themes</a>
+        <a href="#changes" data-tab="changes">Change log</a>
+        <a href="#reminders" data-tab="reminders">Reminders</a>
+        <a href="#people" data-tab="people" hidden>People</a>
+        <button type="button" id="signOutBtn">Sign out</button>
+      </div>
+    </div>
+  </div>
+  <nav class="tabs top-tabs" id="topTabs" aria-label="Sections" hidden>
+    <a href="#banners" data-tab="banners">Banners</a>
+    <a href="#closings" data-tab="closings">Closings</a>
+    <a href="#hours" data-tab="hours">Hours</a>
+    <a href="#insurance" data-tab="insurance">Insurance</a>
+    <a href="#jobs" data-tab="jobs">Jobs</a>
+    <a href="#applications" data-tab="applications">Applications<span class="badge" data-badge="applications" hidden></span></a>
+    <a href="#themes" data-tab="themes" hidden>Themes</a>
+  </nav>
+</header>
+
+<main id="main">
+  <noscript><p>This page needs JavaScript.</p></noscript>
+</main>
+
+<nav class="tabs bottom-tabs" id="bottomTabs" aria-label="Sections" hidden>
+  <a href="#banners" data-tab="banners">Banners</a>
+  <a href="#closings" data-tab="closings">Closings</a>
+  <a href="#hours" data-tab="hours">Hours</a>
+  <a href="#insurance" data-tab="insurance">Insurance</a>
+  <a href="#jobs" data-tab="jobs">Jobs</a>
+    <a href="#applications" data-tab="applications" aria-label="Applications">Apps<span class="badge" data-badge="applications" hidden></span></a>
+</nav>
+
+<div id="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

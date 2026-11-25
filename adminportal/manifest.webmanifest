@@ -1,0 +1,14 @@
+{
+  "name": "EAOM Admin",
+  "short_name": "EAOM Admin",
+  "description": "Website admin for Eye Associates of Miami.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7a2a3c",
+  "icons": [
+    { "src": "../img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "../img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
