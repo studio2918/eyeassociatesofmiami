@@ -153,7 +153,7 @@
         {
           "title": "Vision plan or medical insurance?",
           "style": "note",
-          "text": "Your eyes can be covered two ways:\n- **Vision plan** (like VSP or EyeMed): routine eye exams, glasses and contacts.\n- **Medical insurance:** medical eye care, like diabetic eye exams, testing and treatment for eye disease such as glaucoma and macular degeneration, and urgent problems like infections, injuries and sudden vision changes.\nPlease bring both cards, even for a routine exam. Some vision plans also cover medical testing, and we'll check what yours covers.\n**Sometimes we accept a plan's medical insurance but not its vision benefits.** Check the plans we accept below, or give us a call if you're not sure."
+          "text": "Your eyes can be covered two ways:\n- **Vision plan** (like VSP or EyeMed): routine eye exams, glasses and contacts.\n- **Medical insurance:** medical eye care, like diabetic eye exams, testing and treatment for eye disease such as glaucoma and macular degeneration, and urgent problems like infections, injuries and sudden vision changes.\nPlease bring both cards, even for a routine exam. Some vision plans cover medical testing too, and we'll check yours.\n**Sometimes we accept a plan's medical insurance but not its vision benefits.** Check the plans we accept above, or give us a call if you're not sure."
         },
         {
           "title": "",
@@ -199,6 +199,6 @@
         "end": "12-31"
       }
     ],
-    "updatedAt": "2026-11-25T06:03:48.750375Z"
+    "updatedAt": "2026-11-25T06:18:02.471187Z"
   }
 }

@@ -127,10 +127,18 @@ h2 { font-size: clamp(28px, 3.4vw, 36px); letter-spacing: -.015em; line-height: 
   .ins .ins-notes .ins-note li { margin-bottom: 8px; }
   .ins-notes .ins-note p + p, .ins-notes .ins-note ul + p, .ins-notes .ins-note p + ul { margin-top: 12px; }
   /* just one box: it spans the full width, its words in two columns (heading across the top) so it doesn't read as one long strip */
-  /* (counted by boxes, not children: the holiday peeker sits in this row too) */
-  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note { grid-column: 1 / -1; columns: 2; column-gap: 56px; padding: 28px 36px; }
-  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note h3 { column-span: all; }
-  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > * { break-inside: avoid; }
+  /* (counted by boxes, not children: the holiday peeker sits in this row too). Left: the opening line and the list;
+     right: the paragraphs after the list, starting level with the list (John), with a short divider line between */
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note { grid-column: 1 / -1; position: relative; display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; align-content: start; padding: 28px 36px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > * { grid-column: 1; margin-top: 0; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > h3 { grid-column: 1 / -1; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > ul { grid-row: 3 / span 8; align-self: start; margin-top: 12px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > ul ~ p { grid-column: 2; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > ul + p { grid-row: 3; margin-top: 12px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > ul + p + p { grid-row: 4; margin-top: 12px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > ul + p + p + p { grid-row: 5; margin-top: 12px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > ul + p + p + p + p { grid-row: 6; margin-top: 12px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note:has(> ul ~ p)::after { content: ""; position: absolute; left: calc(50% + 2px); top: 96px; bottom: 36px; width: 1px; background: rgba(122, 42, 60, .22); }
 }
 
 .find { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: stretch; }
