@@ -127,9 +127,10 @@ h2 { font-size: clamp(28px, 3.4vw, 36px); letter-spacing: -.015em; line-height: 
   .ins .ins-notes .ins-note li { margin-bottom: 8px; }
   .ins-notes .ins-note p + p, .ins-notes .ins-note ul + p, .ins-notes .ins-note p + ul { margin-top: 12px; }
   /* just one box: it spans the full width, its words in two columns (heading across the top) so it doesn't read as one long strip */
-  .ins-notes .ins-note:only-child { grid-column: 1 / -1; columns: 2; column-gap: 56px; padding: 28px 36px; }
-  .ins-notes .ins-note:only-child h3 { column-span: all; }
-  .ins-notes .ins-note:only-child > * { break-inside: avoid; }
+  /* (counted by boxes, not children: the holiday peeker sits in this row too) */
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note { grid-column: 1 / -1; columns: 2; column-gap: 56px; padding: 28px 36px; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note h3 { column-span: all; }
+  .ins-notes:not(:has(.ins-note ~ .ins-note)) .ins-note > * { break-inside: avoid; }
 }
 
 .find { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: stretch; }
