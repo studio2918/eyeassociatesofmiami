@@ -126,6 +126,10 @@ h2 { font-size: clamp(28px, 3.4vw, 36px); letter-spacing: -.015em; line-height: 
   .ins-notes .ins-note p, .ins .ins-notes .ins-note ul { font-size: 15.5px; line-height: 1.6; }
   .ins .ins-notes .ins-note li { margin-bottom: 8px; }
   .ins-notes .ins-note p + p, .ins-notes .ins-note ul + p, .ins-notes .ins-note p + ul { margin-top: 12px; }
+  /* just one box: it spans the full width, its words in two columns (heading across the top) so it doesn't read as one long strip */
+  .ins-notes .ins-note:only-child { grid-column: 1 / -1; columns: 2; column-gap: 56px; padding: 28px 36px; }
+  .ins-notes .ins-note:only-child h3 { column-span: all; }
+  .ins-notes .ins-note:only-child > * { break-inside: avoid; }
 }
 
 .find { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: stretch; }
