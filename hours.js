@@ -282,7 +282,10 @@
     var stop = new Date(n.d); stop.setHours(0, 0, 0, 0);
     for (var k = 0; k < 60 && !why && (d < stop || k === 0); k++, d.setDate(d.getDate() + 1)) {
       var key = ymd(d), c = (info.closings || []).filter(function (x) { return x && x.date === key; })[0];
-      if (c && c.reason) why = String(c.reason).trim();
+      // today's short day only counts once it has cut in: closed early and it's past that time, or opening late
+      // (before the regular opening on an early-close day we're simply "Closed · opens today", not closed for it)
+      var cut = !c || c.allDay || k > 0 || mins(c.openAt) != null || (mins(c.closeAt) != null && m >= mins(c.closeAt));
+      if (c && c.reason && cut) why = String(c.reason).trim();
     }
     if (!why && info.weatherClosedToday) why = 'weather';
     return { open: false, text: (why ? 'Closed for ' + why : 'Closed') + ' · opens ' + when + ' at ' + t(n.h[0]) };
