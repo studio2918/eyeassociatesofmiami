@@ -18,6 +18,8 @@
   --accent-hover: #5f1f2e;
   --accent-ink: #ffffff;
   --accent-tint: #f6ecee;
+  --sky-line: #8fb4cc;   /* edge + bullets on sky-blue boxes */
+  --sky-ink: #4b7896;
   --shadow: 0 8px 24px rgba(29, 39, 48, .07);
 }
 :root { color-scheme: light; }
@@ -994,3 +996,61 @@ details.fold.tile:has(.eyes-perch) { position: relative; }
   .find-card { background: var(--sky); }
   .find-card h2 span { color: inherit; }
 }
+
+/* Eye care topic pages (scripts/build-eye-pages.py): same hero as Careers, then easy-reading text */
+.topic .topic-crumb { margin: 0 0 8px; font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.topic .topic-crumb a { color: var(--accent); text-decoration: none; }
+.topic-body { max-width: 760px; padding: 28px 0 64px; }
+.topic-body h2 { font-size: 24px; letter-spacing: -.015em; margin: 32px 0 10px; }
+.topic-body p { color: var(--soft); font-size: 17px; line-height: 1.65; margin: 0 0 12px; }
+.topic-body p b, .topic-body li b { color: var(--ink); }
+.topic-body ul { margin: 0 0 12px; padding-left: 20px; color: var(--soft); font-size: 17px; line-height: 1.6; }
+.topic-body li { margin-bottom: 6px; }
+.topic-body li::marker { color: var(--accent); }
+.topic-body a { color: var(--accent); font-weight: 700; }
+.topic-body a[href^="tel:"] { white-space: nowrap; }   /* keep the phone number on one line */
+.topic .careers-hero .wrap { padding-bottom: 4px; }
+.topic .careers-hero p:not(.topic-back) { color: var(--ink); }
+/* section headings: short maroon bar on the left */
+.topic-body > h2 { position: relative; padding-left: 20px; }
+.topic-body > h2::before { content: ""; position: absolute; left: 0; top: .2em; bottom: .2em; width: 4px; border-radius: 2px; background: var(--accent); }
+/* Urgent box, two panels: "Eye emergency?" on soft maroon, "Other urgent eye problems?" on sky blue.
+   The box's own children carry the backgrounds, so the builder's HTML stays one plain list of parts. */
+.topic-alert { margin: 12px 0 24px; }
+.topic-alert p { font-size: 16px; }
+.topic-body .topic-alert > * { margin: 0; padding: 0 20px 10px; background: var(--accent-tint); }
+.topic-body .topic-alert > ul { padding: 6px 20px 10px 40px; }
+.topic-alert > :first-child { padding-top: 18px; border-top: 4px solid var(--accent); border-radius: 16px 16px 0 0; }
+.topic-body .topic-alert > p:has(+ .topic-alert-h) { margin-bottom: 14px; padding-bottom: 18px; border-radius: 0 0 16px 16px; }
+/* back button above the heading: topic page -> its overview page, overview page -> home */
+.topic .topic-back { margin: 0 0 14px; }
+.topic .topic-back a { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 16px 0 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); color: var(--ink); font-size: 15px; font-weight: 700; text-decoration: none; }
+.topic .topic-back a span { color: var(--accent); font-size: 22px; line-height: 1; margin-top: -2px; }
+.topic .topic-back a:hover { border-color: var(--accent); }
+.topic-alert .topic-alert-h { color: var(--ink); font-weight: 800; }
+.topic-alert ul { font-size: 16px; }
+.topic-body .topic-alert * + .topic-alert-h, .topic-body .topic-alert * + .topic-alert-h ~ * { background: var(--sky); }
+.topic-alert * + .topic-alert-h { padding-top: 18px; border-top: 4px solid var(--sky-line); border-radius: 16px 16px 0 0; }
+.topic-alert * + .topic-alert-h ~ ul li::marker { color: var(--sky-ink); }
+.topic-alert > :last-child { padding-bottom: 18px; border-radius: 0 0 16px 16px; }
+/* highlighted box inside a page (e.g. daily disposables on Contact lenses) */
+.topic-callout { background: var(--sky); border-radius: 14px; padding: 16px 20px; margin: 18px 0; }
+.topic-callout p { color: var(--ink); margin: 0; }
+.topic-callout .topic-callout-h { font-weight: 800; font-size: 18px; margin-bottom: 4px; }
+/* overview pages (Urgent / Routine / Medical eye care): one row per topic */
+.topic-index { list-style: none; padding: 0 !important; margin: 24px 0 0 !important; }
+.topic-index li { position: relative; margin: 0; border-bottom: 1px solid var(--line); }
+.topic-body .topic-index a { display: block; padding: 16px 34px 16px 0; text-decoration: none; font-weight: 400; }
+.topic-index a::after { content: "›"; content: "›" / ""; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 26px; }
+.topic-index b { display: block; color: var(--accent); font-size: 18px; }
+.topic-index span { color: var(--soft); font-size: 15px; }
+.topic-call { margin-top: 40px; background: var(--sky); border-radius: 18px; padding: 24px 26px; }
+.topic-body .topic-call h2 { margin-top: 0; }
+.topic-call .btn, .topic-body .topic-call a.btn { margin-top: 4px; color: var(--accent-ink); text-decoration: none; }
+.topic-related { margin-top: 32px; }
+.topic-related h2 { font-size: 18px; margin-top: 0; }
+.topic-related ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.topic-related li { margin: 0; }
+.topic-related a { display: inline-block; padding: 8px 14px; border-radius: 999px; background: var(--bg-2); border: 1px solid var(--line); text-decoration: none; font-size: 15px; }
+.topic-related a:hover { border-color: var(--accent); }
+@media (max-width: 600px) { .topic-body { padding-top: 16px; } .topic-body h2 { font-size: 21px; } .topic-body p, .topic-body ul { font-size: 16px; } .topic-call { padding: 20px; } }
