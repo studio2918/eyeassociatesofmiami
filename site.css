@@ -1054,3 +1054,6 @@ details.fold.tile:has(.eyes-perch) { position: relative; }
 .topic-related a { display: inline-block; padding: 8px 14px; border-radius: 999px; background: var(--bg-2); border: 1px solid var(--line); text-decoration: none; font-size: 15px; }
 .topic-related a:hover { border-color: var(--accent); }
 @media (max-width: 600px) { .topic-body { padding-top: 16px; } .topic-body h2 { font-size: 21px; } .topic-body p, .topic-body ul { font-size: 16px; } .topic-call { padding: 20px; } }
+/* home page Eye care cards: the items link to their topic pages, quietly (same text color, a faint underline) */
+.list a, .tile p a.soft-link { color: inherit; text-decoration: underline; text-decoration-color: rgba(122, 42, 60, .28); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.list a:hover, .tile p a.soft-link:hover { color: var(--accent); text-decoration-color: currentColor; }
