@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eye Associates of Miami — Miami, Oklahoma</title>
+<title>Eye Doctor in Miami, OK | Eye Associates of Miami</title>
 <meta name="description" content="Eye exams for all ages, contact lenses, urgent eye care and eye disease exams at 2222 N Main St in Miami, Oklahoma. Call (918) 540-1929.">
 <link rel="canonical" href="https://eyeassociatesofmiami.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Eye Associates of Miami — Miami, Oklahoma">
+<meta property="og:title" content="Eye Associates of Miami — Eye Doctors in Miami, Oklahoma">
 <meta property="og:description" content="Eye exams for all ages, contact lenses, urgent eye care and eye disease exams on North Main in Miami, OK.">
+<meta property="og:site_name" content="Eye Associates of Miami">
+<meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://eyeassociatesofmiami.com/">
 <meta property="og:image" content="https://eyeassociatesofmiami.com/img/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -20,8 +22,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Optometric",
+  "@id": "https://eyeassociatesofmiami.com/#practice",
   "name": "Eye Associates of Miami",
   "url": "https://eyeassociatesofmiami.com/",
+  "description": "Hometown optometrists in Miami, Oklahoma: eye exams for all ages, contact lenses, urgent eye care and eye disease exams.",
+  "medicalSpecialty": "Optometric",
   "logo": "https://eyeassociatesofmiami.com/img/logo-full.png",
   "image": "https://eyeassociatesofmiami.com/img/og-image.png",
   "telephone": "+1-918-540-1929",
@@ -35,7 +40,13 @@
     "postalCode": "74354",
     "addressCountry": "US"
   },
-  "areaServed": ["Miami, OK", "Ottawa County, OK"],
+  "geo": { "@type": "GeoCoordinates", "latitude": 36.9004, "longitude": -94.8774 },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Eye+Associates+of+Miami%2C+2222+N+Main+St%2C+Miami%2C+OK+74354",
+  "areaServed": [
+    { "@type": "City", "name": "Miami, Oklahoma" },
+    { "@type": "AdministrativeArea", "name": "Ottawa County, Oklahoma" }
+  ],
+  "knowsAbout": ["Comprehensive eye exams", "Children's eye exams", "Contact lens exams and fittings", "Urgent eye care", "Eye injuries and foreign body removal", "Eye infections", "Diabetic eye exams", "Glaucoma", "Macular degeneration", "Cataracts", "Dry eye disease", "Plaquenil (hydroxychloroquine) screening"],
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "08:30", "closes": "17:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:30", "closes": "16:00" }
@@ -48,6 +59,9 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "@id": "https://eyeassociatesofmiami.com/#website", "url": "https://eyeassociatesofmiami.com/", "name": "Eye Associates of Miami", "publisher": { "@id": "https://eyeassociatesofmiami.com/#practice" } }
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='.5' cy='1' r='1'%3E%3Cstop offset='0' stop-color='%23f3e3e7'/%3E%3Cstop offset='.75' stop-color='%237a2a3c'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath d='M6 46a26 26 0 0 1 52 0z' fill='url(%23g)'/%3E%3Crect x='2' y='50' width='60' height='4' fill='%237a2a3c'/%3E%3C/svg%3E">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -57,9 +71,24 @@
 <body id="top">
 <a class="skip" href="#main">Skip to main content</a>
 
+<!-- seed:start --><script id="eaom-seed" type="application/json">{"hours":{"mon":{"open":"08:30","close":"17:00"},"tue":{"open":"08:30","close":"17:00"},"wed":{"open":"08:30","close":"17:00"},"thu":{"open":"08:30","close":"17:00"},"fri":{"open":"08:30","close":"16:00"},"sat":null,"sun":null},"hoursLine":"Open Mon–Thu 8:30–5 · Fri 8:30–4","banner":null,"closings":[{"date":"2026-11-27","allDay":true,"openAt":null,"closeAt":null,"reason":"Thanksgiving"}],"jobs":[],"doctors":[{"id":"mcquigg","name":"Clark McQuigg","credentials":"O.D.","title":"Optometrist","bio":""},{"id":"walls","name":"Wade Walls","credentials":"O.D.","title":"Optometrist","bio":""},{"id":"gray","name":"John Gray III","credentials":"O.D.","title":"Optometrist","bio":""}],"themes":[{"id":"thanksgiving","on":true,"start":"11-01","end":"11-30"},{"id":"christmas","on":true,"start":"12-01","end":"12-31"}]}</script><!-- seed:end -->
+<script src="hours.js?v=18"></script>
 <div class="notice" id="notice" role="status">
   <div class="wrap"><span id="notice-text"></span><button type="button" aria-label="Hide this message" id="notice-close">×</button></div>
 </div>
+<script>
+/* The banner goes up before the page first paints (from last visit's copy, or the copy built into the page on a
+   first visit), so it never pops in later and pushes the page down. The script at the bottom keeps it current. */
+(function () {
+  var c = window.EAOMHours && EAOMHours.cached, b = c && (c.banner || EAOMHours.autoBanner(c));
+  if (!b) return;
+  try { if (sessionStorage.getItem('eaom-notice:' + b.message)) return; } catch (e) {}
+  var n = document.getElementById('notice'), t = document.getElementById('notice-text');
+  n.className = 'notice on ' + (b.type === 'weather' ? 'weather' : b.type === 'holiday' ? 'holiday' : 'notice-info');
+  t.textContent = b.message + (b.after ? ' ' + b.after : '');
+  if (b.greeting) { var g = document.createElement('strong'); g.className = 'notice-greet'; g.textContent = b.greeting; t.appendChild(document.createTextNode(' ')); t.appendChild(g); }
+})();
+</script>
 
 <header>
   <div class="wrap">
@@ -536,7 +565,6 @@
   new IntersectionObserver(function (es) { if (es[0].isIntersecting) play(); }, { threshold: .25 }).observe(card);   // as soon as a good part of the card shows
 })();
 </script>
-<script src="hours.js?v=16"></script>
 <script src="format.js?v=1"></script>
 <script src="careers.js?v=21"></script>
 <script src="theme-pick.js?v=2"></script>
@@ -599,15 +627,15 @@
     try { if (sessionStorage.getItem(key)) return; } catch (e) {}
     var cls = 'notice on ' + (b.type === 'weather' ? 'weather' : b.type === 'holiday' ? 'holiday' : 'notice-info');
     var after = b.after ? ' ' + b.after : '';   // weather: "We plan to reopen tomorrow at 8:30 AM. Check back here for updates!"
-    if (n.className === cls && document.getElementById('notice-text').textContent === b.message + after + (b.greeting ? ' ' + b.greeting : '')) return;   // already up (from last visit's copy)
+    document.getElementById('notice-close').onclick = function () {   // (wired first: the banner may already be up from the top of the page)
+      n.classList.remove('on');
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+    };
+    if (n.className === cls && document.getElementById('notice-text').textContent === b.message + after + (b.greeting ? ' ' + b.greeting : '')) return;   // already up (put up at the top of the page)
     n.className = cls;
     var nt = document.getElementById('notice-text');
     nt.textContent = b.message + after;
     if (b.greeting) { nt.appendChild(document.createTextNode(' ')); nt.appendChild(el('strong', 'notice-greet', b.greeting)); }   // same line: keeps the banner short
-    document.getElementById('notice-close').onclick = function () {
-      n.classList.remove('on');
-      try { sessionStorage.setItem(key, '1'); } catch (e) {}
-    };
   }
 
   function showInsurance(ins) {

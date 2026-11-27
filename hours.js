@@ -68,10 +68,20 @@
   // The last content this phone saw (public hours / banner / jobs only), so the next visit can paint the
   // banner and the hiring card at once instead of popping them in after the download. Two weeks max.
   var CACHE_KEY = 'eaom-last-content', CACHE_MAX_MS = 14 * 864e5;
+  // A first visit (nothing saved yet) paints from the copy built into the page (scripts/snapshot-content.py), so the
+  // banner doesn't pop in after the download and push the page down.
+  function readSeed() {
+    try {
+      var el = document.getElementById('eaom-seed'), c = el && JSON.parse(el.textContent || 'null');
+      return c && validHours(c.hours) ? Object.assign({ at: Date.now() }, c) : null;
+    } catch (e) { return null; }
+  }
   function readCache() {
     try {
-      var c = JSON.parse(window.localStorage.getItem(CACHE_KEY) || 'null');
-      if (!c || !validHours(c.hours) || !(Date.now() - c.at < CACHE_MAX_MS)) return null;
+      var c = null;
+      try { c = JSON.parse(window.localStorage.getItem(CACHE_KEY) || 'null'); } catch (e) { c = null; }
+      if (!c || !validHours(c.hours) || !(Date.now() - c.at < CACHE_MAX_MS)) c = readSeed();
+      if (!c) return null;
       return { hours: c.hours, hoursLine: c.hoursLine || '', banner: liveBanner(c.banner), closings: c.closings || [], jobs: c.jobs || [],
                doctors: validDoctors(c.doctors) ? c.doctors : null, themes: Array.isArray(c.themes) ? c.themes : null };
     } catch (e) { return null; }

@@ -45,20 +45,6 @@
     "banner": null,
     "closings": [
       {
-        "date": "2026-11-25",
-        "allDay": false,
-        "openAt": null,
-        "closeAt": "12:00",
-        "reason": "Thanksgiving"
-      },
-      {
-        "date": "2026-11-26",
-        "allDay": true,
-        "openAt": null,
-        "closeAt": null,
-        "reason": "Thanksgiving"
-      },
-      {
         "date": "2026-11-27",
         "allDay": true,
         "openAt": null,
@@ -199,6 +185,6 @@
         "end": "12-31"
       }
     ],
-    "updatedAt": "2026-11-25T06:18:02.471187Z"
+    "updatedAt": "2026-11-27T15:55:45.254360Z"
   }
 }
