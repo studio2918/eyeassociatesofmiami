@@ -282,6 +282,7 @@
       <a href="careers.html" id="careers-link" hidden>We're hiring</a>
       <a href="https://www.facebook.com/p/Eye-Associates-of-Miami-100057582874666/">Facebook</a>
       <a class="review-link" href="https://g.page/r/CcrgvsHVKgG4EAI/review" target="_blank" rel="noopener">★ Leave us a Google review</a>
+      <a href="privacy.html">Website privacy</a>
     </nav>
     </div>
     <div class="foot-bottom"><span>© 2026 Eye Associates of Miami</span><a class="admin-link" href="/adminportal/" rel="nofollow">Admin</a></div>
@@ -749,16 +750,6 @@
     if (cfg.marloLink) document.querySelectorAll('.marlo-link').forEach(function (a) { a.href = cfg.marloLink; });
     if (cfg.googleReviewLink) document.querySelectorAll('.review-link').forEach(function (a) { a.href = cfg.googleReviewLink; });
 
-    /* Privacy-safe visitor counts (Cloudflare Web Analytics: no cookies, no personal data).
-       Off until a token is added. Never add Meta Pixel or Google Analytics to this site. */
-    if (cfg.cloudflareAnalyticsToken) {
-      var s = document.createElement('script');
-      s.defer = true;
-      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-      s.setAttribute('data-cf-beacon', JSON.stringify({ token: cfg.cloudflareAnalyticsToken }));
-      document.body.appendChild(s);
-    }
-
     var rows = EAOMHours.weekRows(info), week = document.getElementById('hours-week');
     if (rows.length) {
       week.textContent = '';
@@ -807,5 +798,6 @@
 </script>
 
 <script src="directions.js?v=2"></script>
+<script src="analytics.js?v=1" defer></script>
 </body>
 </html>

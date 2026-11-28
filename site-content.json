@@ -7,8 +7,6 @@
   "marloLink": "https://store.meetmarlo.com/login",
   "_googleReviewHelp": "Paste the link from Google Business Profile > 'Ask for reviews'. Until then the footer link opens a Google search for the office.",
   "googleReviewLink": "https://g.page/r/CcrgvsHVKgG4EAI/review",
-  "_analyticsHelp": "Optional: Cloudflare Web Analytics token (privacy-safe, no cookies). Leave blank for no visitor counting.",
-  "cloudflareAnalyticsToken": "",
   "howToApply": "Prefer to apply in person? Stop by the front desk with a résumé or call (918) 540-1929.",
   "_afterHoursHelp": "After-hours urgent check: Studio 2918 AWS system (signed AWS BAA). Filled in after deploy. Blank = urgent patients are told to go to the ER or call when we open.",
   "afterHours": {
@@ -185,6 +183,6 @@
         "end": "12-31"
       }
     ],
-    "updatedAt": "2026-11-27T15:55:45.254360Z"
+    "updatedAt": "2026-11-28T03:28:42.212729Z"
   }
 }

@@ -224,6 +224,7 @@ export function setupApplyForm(info) {
     },
     message(text, tone) { say(text, tone); },
     done(firstName) {
+      if (typeof window !== 'undefined' && window.EAOMAnalytics) window.EAOMAnalytics.track('job_application_submit');   // no applicant details
       const done = el('div', 'apply-done');
       done.setAttribute('role', 'status');
       done.tabIndex = -1;
